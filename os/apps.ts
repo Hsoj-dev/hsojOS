@@ -10,7 +10,7 @@ import Snake from './apps/Snake.svelte';
 import Terminal from './apps/Terminal.svelte';
 import Timer from './apps/Timer.svelte';
 import Welcome from './apps/Welcome.svelte';
-import YouTube from './apps/YouTube.svelte';
+import YouTube from './apps/Youtube.svelte';
 
 /**
  * Everything the OS needs to know about an app.

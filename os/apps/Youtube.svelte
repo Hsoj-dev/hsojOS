@@ -1,8 +1,7 @@
-<!-- src/routes/projects/hsojOS/os/apps/YouTube.svelte -->
+<!-- src/routes/projects/hsojOS/os/apps/Youtube.svelte -->
 <script lang="ts">
 	import { env } from '$env/dynamic/public';
 
-	// Set PUBLIC_YOUTUBE_API_KEY in your .env (see the notes that came with this app)
 	const API_KEY = env.PUBLIC_YOUTUBE_API_KEY;
 
 	type Video = { id: string; title: string; channel: string; thumb: string };
@@ -188,7 +187,7 @@
 					<p class="text-sm text-base-content/60">Search for a video, or paste a link.</p>
 					{#if !API_KEY}
 						<p class="text-xs text-warning">
-							No API key found, so search is off. Pasted links still work.
+							No API key found, so search is off. Pasted links still work. 
 						</p>
 					{/if}
 				</div>
