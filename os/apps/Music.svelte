@@ -670,7 +670,7 @@
 				class="min-h-0 flex-col items-center overflow-y-auto border-base-content/15
 					{focus
 					? 'absolute inset-0 z-20 flex justify-center bg-base-100/50 backdrop-blur-2xl'
-					: `flex-1 @2xl:w-80 @2xl:flex-none @2xl:border-l ${pane === 'playing' ? 'flex' : 'hidden'} @2xl:flex`}"
+					: `flex-1 @2xl:w-84 @2xl:flex-none @2xl:border-l ${pane === 'playing' ? 'flex' : 'hidden'} @2xl:flex`}"
 				aria-label="Now playing"
 			>
 				<div class="my-auto flex w-full max-w-sm flex-col items-center gap-3 p-5">

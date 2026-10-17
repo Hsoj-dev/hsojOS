@@ -8,6 +8,7 @@ import Contact from './apps/Contact.svelte';
 import Excalidraw from './apps/Excalidraw.svelte';
 import ImageViewer from './apps/ImageViewer.svelte';
 import Messenger from './apps/Messenger.svelte';
+import Music from './apps/Music.svelte';
 import News from './apps/News.svelte';
 import Notes from './apps/Notes.svelte';
 import Paint from './apps/Paint.svelte';
@@ -255,6 +256,17 @@ export const APPS: AppSettings[] = [
 		showInDock: false
 	}),
 	defineApp({
+		id: 'music',
+		title: 'Music',
+		description: 'Play songs from YouTube or your files',
+		glyph: '♪',
+		component: Music,
+		defaultWidth: 780,
+		defaultHeight: 600,
+		minWidth: 340,
+		minHeight: 420
+	}),
+	defineApp({
 		id: 'weather',
 		title: 'Weather',
 		description: 'Forecast with what to wear',
@@ -287,7 +299,8 @@ export const APPS: AppSettings[] = [
 		defaultWidth: 640,
 		defaultHeight: 460,
 		minWidth: 360,
-		minHeight: 320
+    minHeight: 320,
+		showInDock: false
 	}),
 	defineApp({
 		id: 'welcome',
