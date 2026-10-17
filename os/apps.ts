@@ -1,14 +1,23 @@
 // src/routes/projects/hsojOS/os/apps.ts
 import type { Component } from 'svelte';
-import Placeholder from './apps/Placeholder.svelte';
+// import Placeholder from './apps/Placeholder.svelte';
 import Browser from './apps/Browser.svelte';
 import Calculator from './apps/Calculator.svelte';
 import Camera from './apps/Camera.svelte';
+import Contact from './apps/Contact.svelte';
 import Excalidraw from './apps/Excalidraw.svelte';
+import ImageViewer from './apps/ImageViewer.svelte';
+import Messenger from './apps/Messenger.svelte';
+import News from './apps/News.svelte';
+import Notes from './apps/Notes.svelte';
 import Paint from './apps/Paint.svelte';
+import PdfReader from './apps/PdfReader.svelte';
+import Settings from './apps/Settings.svelte';
 import Snake from './apps/Snake.svelte';
 import Terminal from './apps/Terminal.svelte';
 import Timer from './apps/Timer.svelte';
+import Todo from './apps/Todo.svelte';
+import Weather from './apps/Weather.svelte';
 import Welcome from './apps/Welcome.svelte';
 import YouTube from './apps/Youtube.svelte';
 
@@ -78,17 +87,6 @@ export const APPS: AppSettings[] = [
 		translucent: true
 	}),
 	defineApp({
-		id: 'files',
-		title: 'Files',
-		description: 'Browse your files',
-		glyph: '▤',
-		component: Placeholder,
-		props: { label: 'Files' },
-		defaultWidth: 720,
-    defaultHeight: 460,
-		showInDock: false
-	}),
-	defineApp({
 		id: 'browser',
 		title: 'Browser',
 		description: 'Surf the web',
@@ -128,12 +126,48 @@ export const APPS: AppSettings[] = [
 	defineApp({
 		id: 'notes',
 		title: 'Notes',
-		description: 'Jot things down',
+		description: 'Write with formatting, save as .md or .txt',
 		glyph: '✎',
-		component: Placeholder,
-		props: { label: 'Notes' },
-		defaultWidth: 480,
-    defaultHeight: 360,
+		component: Notes,
+		defaultWidth: 640,
+		defaultHeight: 520,
+		minWidth: 380,
+		minHeight: 300
+	}),
+	defineApp({
+		id: 'todo',
+		title: 'To-Do',
+		description: 'Simple task list',
+		glyph: '✓',
+		component: Todo,
+		defaultWidth: 380,
+		defaultHeight: 520,
+		minWidth: 300,
+		minHeight: 320
+	}),
+	defineApp({
+		id: 'images',
+		title: 'Image Viewer',
+		description: 'View photos from your computer',
+		glyph: '▣',
+		component: ImageViewer,
+		defaultWidth: 820,
+		defaultHeight: 560,
+		minWidth: 380,
+		minHeight: 300,
+		showInDock: false
+	}),
+	defineApp({
+		id: 'pdf',
+		title: 'PDF Reader',
+		description: 'Read PDFs from your computer',
+		glyph: '▥',
+		component: PdfReader,
+		hasIframe: true,
+		defaultWidth: 760,
+		defaultHeight: 600,
+		minWidth: 380,
+		minHeight: 300,
 		showInDock: false
 	}),
 	defineApp({
@@ -158,7 +192,7 @@ export const APPS: AppSettings[] = [
 		defaultHeight: 380,
 		resizable: false,
     maximizable: false,
-    showInDock: false
+		showInDock: false
 	}),
 	defineApp({
 		id: 'paint',
@@ -197,16 +231,63 @@ export const APPS: AppSettings[] = [
 		showInDock: false
 	}),
 	defineApp({
+		id: 'guestbook',
+		title: 'Messenger (Guestbook)',
+		description: 'Read and sign the guestbook',
+		glyph: '✉︎',
+		component: Messenger,
+		defaultWidth: 760,
+		defaultHeight: 520,
+		minWidth: 340,
+		minHeight: 320,
+		showInDock: false
+	}),
+	defineApp({
+		id: 'contact',
+		title: 'Contact',
+		description: 'Give me a call',
+		glyph: '☎︎',
+		component: Contact,
+		defaultWidth: 340,
+		defaultHeight: 580,
+		resizable: false,
+		maximizable: false,
+		showInDock: false
+	}),
+	defineApp({
+		id: 'weather',
+		title: 'Weather',
+		description: 'Forecast with what to wear',
+		glyph: '☼',
+		component: Weather,
+		defaultWidth: 460,
+		defaultHeight: 640,
+		minWidth: 360,
+		minHeight: 420,
+		showInDock: false
+	}),
+	defineApp({
+		id: 'news',
+		title: 'News',
+		description: 'Headlines by topic',
+		glyph: '≡',
+		component: News,
+		defaultWidth: 520,
+		defaultHeight: 620,
+		minWidth: 360,
+		minHeight: 360,
+		showInDock: false
+	}),
+	defineApp({
 		id: 'settings',
 		title: 'Settings',
-		description: 'Customize HsojOS',
+		description: 'About HsojOS',
 		glyph: '⚙',
-		component: Placeholder,
-		props: { label: 'Settings' },
-		defaultWidth: 420,
-		defaultHeight: 320,
-		resizable: false,
-		maximizable: false
+		component: Settings,
+		defaultWidth: 640,
+		defaultHeight: 460,
+		minWidth: 360,
+		minHeight: 320
 	}),
 	defineApp({
 		id: 'welcome',
