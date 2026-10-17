@@ -2,6 +2,9 @@
 // Flip these to change how HsojOS behaves. No other file needs to change.
 export const CONFIG = {
 	userName: 'hsoj',
+	version: '0.1.0',
+	/** Shown in Settings > About. Leave empty to hide the link. */
+	githubUrl: 'https://github.com/Hsoj-dev/hsojOS',
 
 	/**
 	 * Lock screen on/off.
@@ -15,6 +18,22 @@ export const CONFIG = {
 
 	/** Minutes of inactivity before the screen saver starts (use 0.1 to test quickly) */
 	idleMinutes: 3,
+
+	news: {
+		/** Language filter sent to FreeNewsApi */
+		language: 'en'
+	},
+
+	guestbook: {
+		/** From your Guestbooks embed code (the same values the main site uses) */
+		id: '6605',
+		host: 'https://guestbooks.meadow.cafe',
+		/** Longest message a visitor can write */
+		maxLength: 500
+	},
+
+	/** Your recorded voicemail for the Contact app. Put the file in static/audio/. */
+	voicemailUrl: '/audio/voicemail.m4a',
 
 	browser: {
 		/** Where the Browser app's search bar goes. %s becomes the search text. */

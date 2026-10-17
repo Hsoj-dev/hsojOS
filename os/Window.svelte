@@ -25,6 +25,9 @@
 		},
 		close: () => wm.close(win.id),
 		focus: () => wm.restore(win.id),
+		open: (appId) => {
+			wm.open(appId);
+		},
 		setTitle: (title) => {
 			win.title = title;
 		}
@@ -216,7 +219,7 @@
 	{#if app.hasIframe && (!active || interacting)}
 		<div
 			aria-hidden="true"
-			class="absolute inset-x-0 bottom-0 z-[5]"
+			class="absolute inset-x-0 bottom-0 z-5"
 			style:top="{TITLEBAR_HEIGHT}px"
 		></div>
 	{/if}

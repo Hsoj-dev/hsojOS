@@ -49,8 +49,8 @@ class Sound {
 		}
 	}
 
-	/** Play one beep. `delay` is seconds from now, so you can schedule a pattern. */
-	tone(frequency: number, delay = 0, duration = 0.18, peak = 0.25) {
+	/** Play one beep. `delay` is seconds from now, so you can schedule a pattern. `hold` keeps it at full volume. */
+	tone(frequency: number, delay = 0, duration = 0.18, peak = 0.25, hold = false) {
 		if (this.level === 0) return;
 		try {
 			const ctx = this.#context();
@@ -60,7 +60,10 @@ class Sound {
 			osc.type = 'sine';
 			osc.frequency.value = frequency;
 			gain.gain.setValueAtTime(0.0001, t);
-			gain.gain.exponentialRampToValueAtTime(Math.max(peak * this.level, 0.0001), t + 0.01);
+			const volume = Math.max(peak * this.level, 0.0001);
+			gain.gain.exponentialRampToValueAtTime(volume, t + 0.02);
+			// A held tone stays at full volume (a phone ring) instead of fading like a blip
+			if (hold) gain.gain.setValueAtTime(volume, t + Math.max(duration - 0.05, 0.03));
 			gain.gain.exponentialRampToValueAtTime(0.0001, t + duration);
 			osc.connect(gain).connect(ctx.destination);
 			osc.start(t);

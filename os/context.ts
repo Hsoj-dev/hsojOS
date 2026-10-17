@@ -12,6 +12,8 @@ export type WindowContext = {
 	close: () => void;
 	/** Restore if minimized and bring to the front */
 	focus: () => void;
+	/** Open another app by its id (e.g. 'guestbook') */
+	open: (appId: string) => void;
 	/** Change the title shown in the title bar */
 	setTitle: (title: string) => void;
 };
